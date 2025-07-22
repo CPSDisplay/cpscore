@@ -1,15 +1,11 @@
 package fr.dams4k.cpscore;
 
-import org.yaml.snakeyaml.Yaml;
-
-import java.io.InputStream;
-import java.util.Map;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 public class CPSCore {
-    public void test() {
-        Yaml yaml = new Yaml();
-        InputStream is = this.getClass().getClassLoader().getResourceAsStream("test.yaml");
-        Map<String, Object> data = yaml.load(is);
-        System.out.println(data);
+    public void testGson() {
+        final GsonBuilder builder = new GsonBuilder();
+        final Gson gson = builder.create();
     }
 }
