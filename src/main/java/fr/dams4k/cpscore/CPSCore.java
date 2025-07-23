@@ -4,11 +4,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
 
-import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 
 public class CPSCore {
     public static Path MOD_FOLDER;
@@ -18,22 +16,17 @@ public class CPSCore {
     }
 
     public static void main(String [] args) throws IOException {
-        Gson gson = getGson();
+        init(Paths.get("."));
+        ComponentManager.load();
 
-        Component component = gson.fromJson(new FileReader("./0.json"), Component.class);
-        System.out.println(component.text);
-//        Component component = new Component();
 
-        Writer writer = new FileWriter("./0.json");
-        gson.toJson(component, writer);
-        writer.flush();
-        writer.close();
+        Component component = new Component();
+        component.setName("cps");
+        ComponentManager.saveComponent(component);
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {
         builder.setPrettyPrinting();
-//        builder.registerTypeAdapter(Component.class, new ComponentSerializer());
-//        builder.registerTypeAdapter(Component.class, new ComponentDeserializer());
         return builder;
     }
 
