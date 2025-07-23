@@ -19,15 +19,12 @@ public class ComponentManager {
         gson = CPSCore.getGson();
 
         File componentsFolder = folderPath().toFile();
-        File[] componentFiles = componentsFolder.listFiles(new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                return pathname.isFile() && pathname.getName().endsWith(".json") && pathname.canRead();
-            }
-        });
+        File[] componentFiles = componentsFolder.listFiles(pathname -> pathname.isFile() && pathname.getName().endsWith(".json") && pathname.canRead());
+        if (componentFiles == null) return;
 
-        Gson gson = CPSCore.getGson();
         for (File componentFile : componentFiles) {
+            if (componentFile == null) continue;
+
             try {
                 FileReader reader = new FileReader(componentFile);
                 Component component = gson.fromJson(reader, Component.class);

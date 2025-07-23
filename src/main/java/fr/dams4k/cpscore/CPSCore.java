@@ -10,15 +10,31 @@ import java.nio.file.Paths;
 
 public class CPSCore {
     public static Path MOD_FOLDER;
+    public static ComponentInterface INTERFACE;
 
-    public static void init(Path modFolder) {
+    public static void init(Path modFolder, ComponentInterface componentInterface) {
         CPSCore.MOD_FOLDER = modFolder;
+        CPSCore.INTERFACE = componentInterface;
     }
 
     public static void main(String [] args) throws IOException {
-        init(Paths.get("."));
-        ComponentManager.load();
+        init(Paths.get("."), new ComponentInterface() {
+            @Override
+            public int getFPS() {
+                return 0;
+            }
 
+            @Override
+            public int getClicks(int keycode) {
+                return 0;
+            }
+
+            @Override
+            public int getBPS() {
+                return 0;
+            }
+        });
+        ComponentManager.load();
 
         Component component = new Component();
         component.setName("cps");
