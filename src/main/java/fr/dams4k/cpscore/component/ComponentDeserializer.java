@@ -1,4 +1,4 @@
-package fr.dams4k.cpscore;
+package fr.dams4k.cpscore.component;
 
 import com.google.gson.*;
 
@@ -10,7 +10,7 @@ public class ComponentDeserializer implements JsonDeserializer<Component> {
         JsonObject object = jsonElement.getAsJsonObject();
 
         Component component = new Component();
-        component.text = object.get(ComponentSerializer.TEXT_PATH).getAsString();
+//        component.text = object.get(ComponentSerializer.TEXT_PATH);
 
         return component;
     }

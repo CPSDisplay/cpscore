@@ -1,3 +1,7 @@
 {
-  "text": "[{0} | {1}] CPSSSSS"
+  "position": {
+    "x": 0,
+    "y": 0,
+    "size": 1.0
+  }
 }

@@ -1,9 +1,7 @@
-package fr.dams4k.cpscore;
+package fr.dams4k.cpscore.component;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.*;
+import fr.dams4k.cpscore.CPSCore;
 
 import java.lang.reflect.Type;
 
@@ -13,7 +11,7 @@ public class ComponentSerializer implements JsonSerializer<Component> {
     @Override
     public JsonElement serialize(Component component, Type type, JsonSerializationContext jsonSerializationContext) {
         JsonObject object = new JsonObject();
-        object.addProperty(TEXT_PATH, component.text);
+//        object.add
 
         return object;
     }
