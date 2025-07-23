@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -19,9 +20,9 @@ public class CPSCore {
     public static void main(String [] args) throws IOException {
         Gson gson = getGson();
 
-//        Component component = gson.fromJson(new FileReader("./0.json"), Component.class);
-//        System.out.println(component.text);
-        Component component = new Component();
+        Component component = gson.fromJson(new FileReader("./0.json"), Component.class);
+        System.out.println(component.text);
+//        Component component = new Component();
 
         Writer writer = new FileWriter("./0.json");
         gson.toJson(component, writer);

@@ -10,4 +10,13 @@ public class CPosition {
         this.y = y;
         this.size = size;
     }
+
+    @Override
+    public String toString() {
+        return "CPosition{" +
+                "x=" + x +
+                ", y=" + y +
+                ", size=" + size +
+                '}';
+    }
 }

@@ -8,4 +8,12 @@ public class CText {
         this.value = value;
         this.color = color;
     }
+
+    @Override
+    public String toString() {
+        return "CText{" +
+                "value='" + value + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }
