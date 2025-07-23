@@ -1,4 +1,4 @@
-package fr.dams4k.cpscore.component.text;
+package fr.dams4k.cpscore.component;
 
 public class CText {
     public String value;

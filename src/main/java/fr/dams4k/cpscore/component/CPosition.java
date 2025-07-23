@@ -1,4 +1,4 @@
-package fr.dams4k.cpscore.component.position;
+package fr.dams4k.cpscore.component;
 
 public class CPosition {
     public int x = 0;

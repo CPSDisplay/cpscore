@@ -3,8 +3,6 @@ package fr.dams4k.cpscore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
-import fr.dams4k.cpscore.component.ComponentDeserializer;
-import fr.dams4k.cpscore.component.ComponentSerializer;
 
 import java.io.FileWriter;
 import java.io.IOException;
