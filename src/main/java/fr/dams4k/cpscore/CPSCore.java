@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonWriter;
 
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -19,13 +20,15 @@ public class CPSCore {
     public static void main(String [] args) throws IOException {
         Gson gson = getGson();
 
-        Component component = new Component();
-        component.text = "[{0} | {1}] CPS";
-
-        Writer writer = new FileWriter("./0.json");
-        gson.toJson(component, writer);
-        writer.flush();
-        writer.close();
+        Component component = gson.fromJson(new FileReader("./0.json"), Component.class);
+        System.out.println(component.text);
+//        Component component = new Component();
+//        component.text = "[{0} | {1}] CPS";
+//
+//        Writer writer = new FileWriter("./0.json");
+//        gson.toJson(component, writer);
+//        writer.flush();
+//        writer.close();
     }
 
     public static Gson getGson() {
