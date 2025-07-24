@@ -7,11 +7,15 @@
     <list default="true" id="0ef13ec7-e096-4dea-80f4-0bc8965df4b7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Lexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/TokenType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Tokenizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/CPSCore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/CPSCore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Lexer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Token.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/TokenType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/TokenType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/dams4k/cpscore/descript/lexer/Tokenizer.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -89,5 +93,20 @@
       <updated>1753173374609</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.StringIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/TokenType.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
