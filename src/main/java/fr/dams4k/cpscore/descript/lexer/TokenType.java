@@ -15,6 +15,8 @@ public enum TokenType {
     // GROUPING
     OPEN_CURLY("{"),
     CLOSE_CURLY("}"),
+    OPEN_BRACKET("["),
+    CLOSE_BRACKET("]"),
 
     // SYMBOLS
     COLON(":"),

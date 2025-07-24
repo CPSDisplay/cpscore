@@ -18,6 +18,9 @@ public class Lexer {
 
             new LexerPattern("\\{", Handlers.defaultHandler(TokenType.OPEN_CURLY)),
             new LexerPattern("\\}", Handlers.defaultHandler(TokenType.CLOSE_CURLY)),
+            new LexerPattern("\\[", Handlers.defaultHandler(TokenType.OPEN_BRACKET)),
+            new LexerPattern("\\]", Handlers.defaultHandler(TokenType.CLOSE_BRACKET)),
+
             new LexerPattern(":", Handlers.defaultHandler(TokenType.COLON)),
             new LexerPattern(";", Handlers.defaultHandler(TokenType.SEMI_COLON)),
             new LexerPattern("=", Handlers.defaultHandler(TokenType.EQUAL)),
