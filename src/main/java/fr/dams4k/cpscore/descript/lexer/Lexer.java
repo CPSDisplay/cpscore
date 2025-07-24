@@ -6,33 +6,21 @@ import java.util.regex.Matcher;
 
 public class Lexer {
     public static RegexHandler actionHandler = (lexer, matcher) -> {
-        boolean found = matcher.find();
-        if (found) {
-            String value = matcher.group();
-            lexer.advance(value.length());
-            lexer.tokens.add(new Token(TokenType.ACTION, value.substring(1)));
-        }
-        return found;
+        String value = matcher.group();
+        lexer.advance(value.length());
+        lexer.tokens.add(new Token(TokenType.ACTION, value.substring(1)));
     };
 
     public static RegexHandler stringHandler = (lexer, matcher) -> {
-        boolean found = matcher.find();
-        if (found) {
-            String value = matcher.group();
-            lexer.advance(value.length());
-            lexer.tokens.add(new Token(TokenType.STRING, value.substring(1, value.length()-1)));
-        }
-        return found;
+        String value = matcher.group();
+        lexer.advance(value.length());
+        lexer.tokens.add(new Token(TokenType.STRING, value.substring(1, value.length()-1)));
     };
 
     public static RegexHandler numberHandler = (lexer, matcher) -> {
-        boolean found = matcher.find();
-        if (found) {
-            String value = matcher.group();
-            lexer.advance(value.length());
-            lexer.tokens.add(new Token(TokenType.NUMBER, value));
-        }
-        return found;
+        String value = matcher.group();
+        lexer.advance(value.length());
+        lexer.tokens.add(new Token(TokenType.NUMBER, value));
     };
 
     public String source;
@@ -75,13 +63,9 @@ public class Lexer {
     public static final RegexHandler defaultHandler(TokenType type, String value) {
         return new RegexHandler() {
             @Override
-            public boolean handle(Lexer lexer, Matcher matcher) {
-                boolean found = matcher.find();
-                if (found) {
-                    lexer.advance(value.length());
-                    lexer.tokens.add(new Token(type, value));
-                }
-                return found;
+            public void handle(Lexer lexer, Matcher matcher) {
+                lexer.advance(value.length());
+                lexer.tokens.add(new Token(type, value));
             }
         };
     }

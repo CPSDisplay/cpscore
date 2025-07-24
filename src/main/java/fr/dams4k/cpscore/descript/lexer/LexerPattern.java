@@ -14,6 +14,11 @@ public class LexerPattern {
 
     public boolean handle(Lexer lexer) {
         String firstIteRegex = String.format("^%s", regex);
-        return handler.handle(lexer, Pattern.compile(firstIteRegex).matcher(lexer.remaining()));
+        Matcher matcher = Pattern.compile(firstIteRegex).matcher(lexer.remaining());
+        if (matcher.find()) {
+            handler.handle(lexer, matcher);
+            return true;
+        }
+        return false;
     }
 }
