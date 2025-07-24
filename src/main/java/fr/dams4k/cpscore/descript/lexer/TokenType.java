@@ -5,19 +5,21 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public enum TokenType {
-    STRING(
-            "string",
-            value -> Pattern.compile( "([\"'])(?:(?=(\\\\?))\\2.)*?\\1").matcher(value),
-            value -> value.substring(1, value.length()-1) // Remove quotes
-    ),
-    NUMBER,
-    TRUE, // also used for pressed
-    FALSE, // also used for unpressed
     ACTION(
             "action",
             value -> Pattern.compile("^\\$[a-zA-Z]*").matcher(value),
             value -> value.substring(1) // Remove $
     ),
+
+    STRING(
+            "string",
+            value -> Pattern.compile( "^([\"'])(?:(?=(\\\\?))\\2.)*?\\1").matcher(value),
+            value -> value.substring(1, value.length()-1) // Remove quotes
+    ),
+    NUMBER("number", "[1-9][0-9]*"),
+//    RANGE("range", "\\[[1-9][0-9]*:[1-9][0-9]*\\]"),
+    TRUE, // also used for pressed
+    FALSE, // also used for unpressed
 
     // GROUPING
     OPEN_CURLY("{", "\\{"),
@@ -71,7 +73,8 @@ public enum TokenType {
 
         String result = matcher.group();
         String formattedResult = tokenFormatter.formatter(result);
-        return new Token(this, formattedResult);
+
+        return new Token(this, formattedResult, result.length());
     }
 
     public static String formatName(String name) {

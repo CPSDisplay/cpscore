@@ -44,14 +44,17 @@ public class CPSCore {
         component.setName("cps");
         ComponentManager.saveComponent(component);
 
-        String source = "{attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
+//        String source = "{$attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
+        String source = "{$attack:true=\"pressed\"}";
         System.out.println(Tokenizer.tokenize(source));
 
-        Token curly = new Token(TokenType.OPEN_CURLY);
-        System.out.println(TokenType.OPEN_CURLY.match(source));
-        String str = "\"Hello world\"andstuff";
-        System.out.println(TokenType.STRING.match(str));
-        System.out.println(TokenType.ACTION.match("$attack:true=\"PRESSED\""));
+//        Token curly = new Token(TokenType.OPEN_CURLY);
+//        System.out.println(TokenType.OPEN_CURLY.match(source));
+//        String str = "\"Hello world\"andstuff";
+//        System.out.println(TokenType.STRING.match(str));
+//        System.out.println(TokenType.ACTION.match("$attack:true=\"PRESSED\""));
+//        System.out.println(TokenType.NUMBER.match("11503"));
+//        System.out.println(TokenType.TRUE.match("true"));
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {
