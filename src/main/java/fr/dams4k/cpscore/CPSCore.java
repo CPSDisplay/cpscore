@@ -10,6 +10,7 @@ import fr.dams4k.cpscore.descript.lexer.Tokenizer;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.SQLOutput;
 
 public class CPSCore {
     public static Path MOD_FOLDER;
@@ -46,12 +47,11 @@ public class CPSCore {
         String source = "{attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
         System.out.println(Tokenizer.tokenize(source));
 
-        Token text = new Token(TokenType.TEXT, "my cool text");
-        System.out.println(text);
-
         Token curly = new Token(TokenType.OPEN_CURLY);
         System.out.println(TokenType.OPEN_CURLY.match(source));
-        System.out.println(TokenType.TEXT.match(source));
+        String str = "\"Hello world\"andstuff";
+        System.out.println(TokenType.STRING.match(str));
+        System.out.println(TokenType.ACTION.match("$attack:true=\"PRESSED\""));
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {

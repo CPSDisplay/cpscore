@@ -1,5 +1,7 @@
 package fr.dams4k.cpscore.descript.lexer;
 
+import java.util.regex.Matcher;
+
 public interface TokenMatcher {
-    boolean match(String value);
+    Matcher match(String value);
 }
