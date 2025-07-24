@@ -22,6 +22,12 @@ Goal
 	unpressed={text:"key is not pressed"; textColor:"ffff00"; backgroundColor:"ff00ff"}
 }
 
+always keyBind to all keybinds
+	{attack:
+		pressed={text:"key is pressed"; textColor:"ffffff"; backgroundColor:"ffffff"};
+		unpressed={text:"key is not pressed"; textColor:"ffff00"; backgroundColor:"ff00ff"}
+	}
+
 N -> /number
 
 S -> {C}

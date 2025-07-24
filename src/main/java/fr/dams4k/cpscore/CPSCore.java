@@ -3,6 +3,9 @@ package fr.dams4k.cpscore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
+import fr.dams4k.cpscore.descript.lexer.Token;
+import fr.dams4k.cpscore.descript.lexer.TokenType;
+import fr.dams4k.cpscore.descript.lexer.Tokenizer;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -39,6 +42,16 @@ public class CPSCore {
         Component component = new Component();
         component.setName("cps");
         ComponentManager.saveComponent(component);
+
+        String source = "{attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
+        System.out.println(Tokenizer.tokenize(source));
+
+        Token text = new Token(TokenType.TEXT, "my cool text");
+        System.out.println(text);
+
+        Token curly = new Token(TokenType.OPEN_CURLY);
+        System.out.println(TokenType.OPEN_CURLY.match(source));
+        System.out.println(TokenType.TEXT.match(source));
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {
