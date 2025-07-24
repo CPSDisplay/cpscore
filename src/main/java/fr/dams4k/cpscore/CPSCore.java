@@ -3,14 +3,11 @@ package fr.dams4k.cpscore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
-import fr.dams4k.cpscore.descript.lexer.Token;
-import fr.dams4k.cpscore.descript.lexer.TokenType;
 import fr.dams4k.cpscore.descript.lexer.Tokenizer;
 
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 
 public class CPSCore {
     public static Path MOD_FOLDER;
@@ -45,7 +42,7 @@ public class CPSCore {
         ComponentManager.saveComponent(component);
 
 //        String source = "{$attack:true=\"pressed\"}";
-        String source = "{$attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
+        String source = "{$attack:true={text:   \"key is pressed\";         textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
         System.out.println(Tokenizer.tokenize(source));
 
     }

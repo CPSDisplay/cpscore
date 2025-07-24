@@ -5,49 +5,27 @@ import java.util.List;
 import java.util.regex.Matcher;
 
 public class Lexer {
-    public static RegexHandler actionHandler = (lexer, matcher) -> {
-        String value = matcher.group();
-        lexer.advance(value.length());
-        lexer.tokens.add(new Token(TokenType.ACTION, value.substring(1)));
-    };
-
-    public static RegexHandler stringHandler = (lexer, matcher) -> {
-        String value = matcher.group();
-        lexer.advance(value.length());
-        lexer.tokens.add(new Token(TokenType.STRING, value.substring(1, value.length()-1)));
-    };
-
-    public static RegexHandler numberHandler = (lexer, matcher) -> {
-        String value = matcher.group();
-        lexer.advance(value.length());
-        lexer.tokens.add(new Token(TokenType.NUMBER, value));
-    };
-
-    public static RegexHandler ignoreHandler = (lexer, matcher) -> {
-        lexer.advance(matcher.group().length());
-    };
-
     public String source;
     public int position;
     public LexerPattern[] patterns = {
-            new LexerPattern("\\s+", ignoreHandler),
+            new LexerPattern("\\s+", Handlers.ignoreHandler),
 
-            new LexerPattern("\\$[a-zA-Z]*", actionHandler),
-            new LexerPattern("^([\"'])(?:(?=(\\\\?))\\2.)*?\\1", stringHandler),
-            new LexerPattern("[1-9][0-9]*", numberHandler),
-            new LexerPattern("true", defaultHandler(TokenType.TRUE)),
-            new LexerPattern("false", defaultHandler(TokenType.FALSE)),
+            new LexerPattern("\\$[a-zA-Z]*", Handlers.actionHandler),
+            new LexerPattern("^([\"'])(?:(?=(\\\\?))\\2.)*?\\1", Handlers.stringHandler),
+            new LexerPattern("[1-9][0-9]*", Handlers.numberHandler),
+            new LexerPattern("true", Handlers.defaultHandler(TokenType.TRUE)),
+            new LexerPattern("false", Handlers.defaultHandler(TokenType.FALSE)),
 
-            new LexerPattern("\\{", defaultHandler(TokenType.OPEN_CURLY)),
-            new LexerPattern("\\}", defaultHandler(TokenType.CLOSE_CURLY)),
-            new LexerPattern(":", defaultHandler(TokenType.COLON)),
-            new LexerPattern(";", defaultHandler(TokenType.SEMI_COLON)),
-            new LexerPattern("=", defaultHandler(TokenType.EQUAL)),
+            new LexerPattern("\\{", Handlers.defaultHandler(TokenType.OPEN_CURLY)),
+            new LexerPattern("\\}", Handlers.defaultHandler(TokenType.CLOSE_CURLY)),
+            new LexerPattern(":", Handlers.defaultHandler(TokenType.COLON)),
+            new LexerPattern(";", Handlers.defaultHandler(TokenType.SEMI_COLON)),
+            new LexerPattern("=", Handlers.defaultHandler(TokenType.EQUAL)),
 
-            new LexerPattern("textColor", defaultHandler(TokenType.TEXT_COLOR)),
-            new LexerPattern("backgroundColor", defaultHandler(TokenType.BACKGROUND_COLOR)),
-            new LexerPattern("text", defaultHandler(TokenType.TEXT)),
-            new LexerPattern("visible", defaultHandler(TokenType.VISIBLE)),
+            new LexerPattern("textColor", Handlers.defaultHandler(TokenType.TEXT_COLOR)),
+            new LexerPattern("backgroundColor", Handlers.defaultHandler(TokenType.BACKGROUND_COLOR)),
+            new LexerPattern("text", Handlers.defaultHandler(TokenType.TEXT)),
+            new LexerPattern("visible", Handlers.defaultHandler(TokenType.VISIBLE)),
     };
     public List<Token> tokens = new ArrayList<>();
 
@@ -69,15 +47,5 @@ public class Lexer {
 
     public boolean at_eof() {
         return this.position >= source.length();
-    }
-
-    public static final RegexHandler defaultHandler(TokenType type) {
-        return new RegexHandler() {
-            @Override
-            public void handle(Lexer lexer, Matcher matcher) {
-                lexer.advance(type.str.length());
-                lexer.tokens.add(new Token(type, type.str));
-            }
-        };
     }
 }
