@@ -22,9 +22,9 @@ public enum TokenType {
     EQUAL("="),
 
     // RESERVED KEYWORD
-    TEXT,
     TEXT_COLOR,
     BACKGROUND_COLOR,
+    TEXT,
     VISIBLE;
 
     public final String str;

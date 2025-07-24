@@ -44,8 +44,10 @@ public class CPSCore {
         component.setName("cps");
         ComponentManager.saveComponent(component);
 
-        String source = "{$attack:true=\"pressed\"}";
+//        String source = "{$attack:true=\"pressed\"}";
+        String source = "{$attack:true={text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"}; false={text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"}}";
         System.out.println(Tokenizer.tokenize(source));
+
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {
