@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ef13ec7-e096-4dea-80f4-0bc8965df4b7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Grammar.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/grammaire.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/TokenType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/TokenType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
