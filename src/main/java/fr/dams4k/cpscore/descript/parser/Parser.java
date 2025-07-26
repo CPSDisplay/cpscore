@@ -32,9 +32,20 @@ public class Parser {
         Token token = advance();
 
         if (token.type != type) {
-            throw new ParserIncorrectToken(type, token.type);
+            throw new ParserIncorrectToken(token.type, type);
         }
 
         return token;
     }
+
+    public Token expectOne(TokenType... types) {
+        Token token = advance();
+
+        for (TokenType tokenType : types) {
+            if (tokenType == token.type) return token;
+        }
+
+
+        throw new ParserIncorrectToken(token.type, types);
+    };
 }

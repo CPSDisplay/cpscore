@@ -4,7 +4,6 @@ import fr.dams4k.cpscore.descript.ast.statements.BlockStmt;
 import fr.dams4k.cpscore.descript.lexer.Token;
 import fr.dams4k.cpscore.descript.lexer.Tokenizer;
 import fr.dams4k.cpscore.descript.parser.Parser;
-import fr.dams4k.cpscore.descript.parser.StatementParser;
 
 import java.util.List;
 
@@ -15,7 +14,10 @@ public class Descript {
         List<Token> tokens = Tokenizer.tokenize(source);
         Parser parser = new Parser(tokens);
 
-        BlockStmt block = StatementParser.parseBlock(parser);
+        BlockStmt block = new BlockStmt();
+        if (block.parse(parser)) {
+            return "failed";
+        }
 
         return block.interpret();
     }

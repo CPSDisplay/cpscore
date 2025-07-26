@@ -27,8 +27,26 @@ public enum Action {
         return (Integer) getObject();
     }
 
+    public Float getFloat() {
+        return (Float) getObject();
+    }
+
     public String getString() {
         return getObject().toString();
+    }
+
+    public Boolean getBoolean() {
+        if (getObject() instanceof Integer) {
+            return getInteger() > 0;
+        } else if (getObject() instanceof Float) {
+            return getFloat() > 0f;
+        } else if (getObject() instanceof String) {
+            return !getString().isEmpty();
+        } else if (getObject() instanceof Boolean) {
+            return (Boolean) getObject();
+        }
+
+        return getObject() != null;
     }
 
     private interface Caller {
