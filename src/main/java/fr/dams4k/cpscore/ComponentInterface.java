@@ -1,7 +1,9 @@
 package fr.dams4k.cpscore;
 
 public interface ComponentInterface {
-    int getFPS();
-    int getClicks(int keycode);
-    int getBPS(); // Blocks Per Second
+    Object getFPS();
+    Object getClicks(int keycode);
+    Object getBPS(); // Blocks Per Second
+    Object getAttack();
+    Object getUseItem();
 }

@@ -20,6 +20,7 @@ public class CText {
     }
 
     public String getText() {
-        return value.replace("{fps}", Integer.toString(CPSCore.INTERFACE.getFPS()));
+//        return value.replace("{fps}", CPSCore.INTERFACE.getFPS());
+        return "";
     }
 }

@@ -6,5 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Rules {
-    public Map<TokenType, TokenType[]> rules = new HashMap<>();
+//    public Map<TokenType, TokenType[]> rules = new HashMap<>() {{
+//        put(TokenType.)
+//    }};
 }

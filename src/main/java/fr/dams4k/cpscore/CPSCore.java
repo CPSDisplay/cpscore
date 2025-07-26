@@ -3,7 +3,7 @@ package fr.dams4k.cpscore;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import fr.dams4k.cpscore.component.Component;
-import fr.dams4k.cpscore.descript.lexer.Tokenizer;
+import fr.dams4k.cpscore.descript.Descript;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 
 public class CPSCore {
     public static Path MOD_FOLDER;
+
     public static ComponentInterface INTERFACE;
 
     public static void init(Path modFolder, ComponentInterface componentInterface) {
@@ -21,18 +22,28 @@ public class CPSCore {
     public static void main(String [] args) throws IOException {
         init(Paths.get("."), new ComponentInterface() {
             @Override
-            public int getFPS() {
+            public Integer getFPS() {
+                return null;
+            }
+
+            @Override
+            public Object getClicks(int keycode) {
+                return null;
+            }
+
+            @Override
+            public Object getBPS() {
+                return null;
+            }
+
+            @Override
+            public Object getAttack() {
                 return 0;
             }
 
             @Override
-            public int getClicks(int keycode) {
-                return 0;
-            }
-
-            @Override
-            public int getBPS() {
-                return 0;
+            public Object getUseItem() {
+                return null;
             }
         });
         ComponentManager.load();
@@ -42,9 +53,15 @@ public class CPSCore {
         ComponentManager.saveComponent(component);
 
 //        String source = "{$attack:true=\"pressed\"}";
-        String source = "{$attack:true=[text:   \"key is pressed\";         textColor:\"ffffff\"; backgroundColor:\"ffffff\"]; false=[text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"]}";
-        System.out.println(Tokenizer.tokenize(source));
+//        String source = "{$attack:true=[text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"]; false=[text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"]}";
+//        System.out.println(Tokenizer.tokenize(source));
+        String simpleSource = "{$useItem:true=[text:\"pressed\"]}";
 
+        System.out.println(Descript.parse(simpleSource));
+
+//        while (true) {
+//            System.out.println(Action.ATTACK.getString());
+//        }
     }
 
     public static GsonBuilder setupBuilder(GsonBuilder builder) {

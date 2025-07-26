@@ -6,6 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0ef13ec7-e096-4dea-80f4-0bc8965df4b7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/CPSCore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/ComponentInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/ComponentInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/component/CText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/component/CText.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/parser/Rules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/parser/Rules.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -37,23 +41,23 @@
     <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Application.CPSCore (2).executor&quot;: &quot;Run&quot;,
-    &quot;Application.CPSCore.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/development/Documents/Programmation/CPSDisplay/cpscore&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Markdown&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.CPSCore (2).executor": "Run",
+    "Application.CPSCore.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/damien/Documents/Programmation/Java/Mods/cpsdisplay4",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
