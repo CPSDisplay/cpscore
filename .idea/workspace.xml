@@ -11,10 +11,9 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/ComponentInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/ComponentInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/Descript.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/Descript.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/BlockStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/BlockStmt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/Statement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/Statement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/errors/ParserIncorrectToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/errors/ParserIncorrectToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/parser/Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/parser/StatementParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/ModifierStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/ModifierStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/StateStmt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/ast/statements/StateStmt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/dams4k/cpscore/descript/lexer/Token.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

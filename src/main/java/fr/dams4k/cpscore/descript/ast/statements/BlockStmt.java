@@ -7,10 +7,11 @@ import fr.dams4k.cpscore.descript.parser.Parser;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class BlockStmt implements Statement{
     public Action action;
-    public List<StateStmt> states = new ArrayList<>();
+    public List<StateStmt> statesStmt = new ArrayList<>();
 
     @Override
     public String toString() {
@@ -18,13 +19,17 @@ public class BlockStmt implements Statement{
     }
 
     public String interpret() {
-        Object actionValue = action.getObject();
-        if (actionValue == null) return "null";
+        Integer value = action.getInteger();
+        String stringValue = Integer.toString(value);
 
-        Boolean isPressed = action.getBoolean();
-        action.is(Integer.class);
+        Boolean isPressed = value > 0;
+        TokenType pressType = isPressed ? TokenType.TRUE : TokenType.FALSE;
 
-        return "";
+        StateStmt stateStmt = findStatePriority(new Token(TokenType.NUMBER, stringValue), new Token(pressType));
+
+        String text = stateStmt.getText(stringValue);
+
+        return text;
     }
 
     public boolean parse(Parser parser) {
@@ -37,7 +42,7 @@ public class BlockStmt implements Statement{
 
             StateStmt state = new StateStmt();
             if (state.parse(parser)) {
-                states.add(state);
+                statesStmt.add(state);
             } else {
                 return false;
             }
@@ -55,5 +60,25 @@ public class BlockStmt implements Statement{
 
             parser.expectOne(TokenType.SEMI_COLON, TokenType.CLOSE_CURLY);
         }
+    }
+
+    public StateStmt findState(Token state) {
+        for (StateStmt stateStmt : statesStmt) {
+            if (stateStmt.state.equals(state)) {
+                return stateStmt;
+            }
+        }
+        return null;
+    }
+
+    public StateStmt findStatePriority(Token... states) {
+        StateStmt stmt = null;
+
+        for (Token state : states) {
+            stmt = findState(state);
+            if (stmt != null) break;
+        }
+
+        return stmt;
     }
 }

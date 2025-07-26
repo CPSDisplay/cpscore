@@ -23,26 +23,26 @@ public class CPSCore {
         init(Paths.get("."), new ComponentInterface() {
             @Override
             public Integer getFPS() {
-                return null;
-            }
-
-            @Override
-            public Object getClicks(int keycode) {
-                return null;
-            }
-
-            @Override
-            public Object getBPS() {
-                return null;
-            }
-
-            @Override
-            public Object getAttack() {
                 return 0;
             }
 
             @Override
-            public Object getUseItem() {
+            public Integer getClicks(int keycode) {
+                return 0;
+            }
+
+            @Override
+            public Integer getBPS() {
+                return 0;
+            }
+
+            @Override
+            public Integer getAttack() {
+                return 0;
+            }
+
+            @Override
+            public Integer getUseItem() {
                 return 0;
             }
         });
@@ -55,7 +55,7 @@ public class CPSCore {
 //        String source = "{$attack:true=\"pressed\"}";
 //        String source = "{$attack:true=[text:\"key is pressed\"; textColor:\"ffffff\"; backgroundColor:\"ffffff\"]; false=[text:\"key is not pressed\"; textColor:\"ffff00\"; backgroundColor:\"ff00ff\"]}";
 //        System.out.println(Tokenizer.tokenize(source));
-        String simpleSource = "{$useItem:true=[text:\"pressed\"]:false=[text:\"unpressed\"]}";
+        String simpleSource = "{$useItem:true=[text:\"pressed\"]:false=[text:\"unpressed\"]:15=[text:\"Overstressed!!!\"]}";
 
         System.out.println(Descript.parse(simpleSource));
 

@@ -17,8 +17,10 @@ public class StateStmt implements Statement {
             return false;
         }
 
-        parser.expectOne(TokenType.SEMI_COLON, TokenType.CLOSE_CURLY);
-
         return true;
+    }
+
+    public String getText(String defaultText) {
+        return modifier.modifiers.getOrDefault(TokenType.TEXT, new Token(TokenType.STRING, defaultText)).value;
     }
 }

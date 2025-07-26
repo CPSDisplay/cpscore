@@ -15,7 +15,7 @@ public class Descript {
         Parser parser = new Parser(tokens);
 
         BlockStmt block = new BlockStmt();
-        if (block.parse(parser)) {
+        if (!block.parse(parser)) {
             return "failed";
         }
 

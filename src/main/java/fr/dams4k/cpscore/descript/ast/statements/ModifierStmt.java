@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ModifierStmt implements Statement {
-    public Map<Token, Token> modifiers = new HashMap<>();
+    public Map<TokenType, Token> modifiers = new HashMap<>();
 
     @Override
     public boolean parse(Parser parser) {
@@ -21,7 +21,8 @@ public class ModifierStmt implements Statement {
         }
 
         parser.expect(TokenType.CLOSE_BRACKET);
-        return false;
+
+        return true;
     }
 
     public void parseModifier(Parser parser) {
@@ -29,6 +30,6 @@ public class ModifierStmt implements Statement {
         parser.expect(TokenType.COLON);
         Token value = parser.expectOne(TokenType.STRING, TokenType.TRUE, TokenType.FALSE, TokenType.NUMBER);
 
-        modifiers.putIfAbsent(attr, value);
+        modifiers.putIfAbsent(attr.type, value);
     }
 }
