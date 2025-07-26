@@ -10,15 +10,15 @@ import java.util.List;
 // Big BIG BIG reference is https://github.com/tlaceby/parser-series/
 // So thanks you man, very cool :thumbsup:
 public class Descript {
-    public static String parse(String source) {
+    public static BlockStmt createBlock(String source) {
         List<Token> tokens = Tokenizer.tokenize(source);
         Parser parser = new Parser(tokens);
 
         BlockStmt block = new BlockStmt();
         if (!block.parse(parser)) {
-            return "failed";
+            return null;
         }
 
-        return block.interpret();
+        return block;
     }
 }

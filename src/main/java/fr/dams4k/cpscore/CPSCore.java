@@ -57,7 +57,7 @@ public class CPSCore {
 //        System.out.println(Tokenizer.tokenize(source));
         String simpleSource = "{$useItem:true=[text:\"pressed\"]:false=[text:\"unpressed\"]:15=[text:\"Overstressed!!!\"]}";
 
-        System.out.println(Descript.parse(source));
+//        System.out.println(Descript.parse(source));
 
     }
 
